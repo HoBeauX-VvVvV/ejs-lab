@@ -7,26 +7,35 @@
 </head>
 <body>
     <%- include('./partials/nav') %>
-  <h1>Full Menu</h1>
+  <h1 class="top">Full Menu</h1>
   <ul>
     <% RESTAURANT.menu.forEach((item, index) => { %>
         <li>
-            <%= RESTAURANT.menu[index].name %>
+           <h2 class="item"><%= RESTAURANT.menu[index].name %></h2>
+           <p class="item"><%= RESTAURANT.menu[index].details %></p>
+           <p class="item">Price: <%= RESTAURANT.menu[index].price %></p>
+           <p class="item">Rating: <%= RESTAURANT.menu[index].rating %></p>
         </li>
-        <li>
-           Price: <%= RESTAURANT.menu[index].price %>
-        </li>
-        <li>
-          Description: <%= RESTAURANT.menu[index].details %>
-        </li>
-        <li>
-          Rating: <%= RESTAURANT.menu[index].rating %>
-        </li>
-        </br>
-      </ul>
     <% }) %>
   </ul>
 </body>
 </html>
 
 
+<style>
+
+.top {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  list-style: none
+}
+
+.item { 
+  display: flex;
+  justify-content: center;
+}
+
+</style>
